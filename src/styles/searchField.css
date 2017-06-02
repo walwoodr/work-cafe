@@ -1,0 +1,10 @@
+#search_field {
+  margin: 40px 0 20px 0;
+  width: 120px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#search_button {
+  clear: left;
+}
