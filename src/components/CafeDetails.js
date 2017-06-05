@@ -54,7 +54,7 @@ export default (props) => {
             </div>;
 
   return (
-    <div>
+    <div id="cafe-details">
       <div className="category-detail-div">
       <h3>Drinks</h3>
       <div className="category-item-div"><img src={coffee_beans} className="detail-icon" alt="coffee beans" /><p> {coffeeTeaQuality(props.cafeDetails.details.coffeeQuality)} Coffee</p></div>

@@ -1,4 +1,4 @@
-#show_cafe {
+#show-cafe {
   background-color: #D2BEB7;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -6,3 +6,20 @@
 .padding-div p {
   display: hidden;
 }
+
+#show-cafe h2 {
+  text-align: left;
+  padding: 0;
+  margin: 0 0 0 15px;
+  color: #F6F2ED;
+  font-size: 6em;
+  color: rgba(86, 216, 185, 0.5);
+  text-shadow: 1px 4px 6px #D2BEB7, 0 0 0 #6B625D, 1px 4px 6px #D2BEB7;
+}
+
+/*
+#56D8B9
+#F6F2ED
+#D2BEB7
+#6B625D
+*/

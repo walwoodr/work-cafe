@@ -32,16 +32,18 @@ const cafeDetails = {
       }
     ]
   }
-}
+};
+
+const props = {cafeDetails: cafeDetails};
 
 export default class ShowCafe extends React.Component {
   render(){
     return (
       <div className="row">
         <div className="three columns padding-div"><p>.</p></div>
-        <div id="show_cafe" className="six columns">
-          <p>Cafe show pane</p>
-          <CafeDetails cafeDetails={cafeDetails} />
+        <div id="show-cafe" className="six columns">
+          <h2>{props.cafeDetails.name}</h2>
+          <CafeDetails cafeDetails={props.cafeDetails} />
           <CafeInput />
         </div>
         <div className="three columns padding-div"><p>.</p></div>
