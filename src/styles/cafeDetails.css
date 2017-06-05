@@ -26,6 +26,7 @@
   padding: 3px;
   font-size: 1.25em;
   background-color: #56D8B9;
+  color: #6B625D;
   position: relative;
   left: -10px;
   top: -22px;
@@ -45,10 +46,14 @@
 
 .multi-detail div {
   display: inline-block;
-  margin: 0 15px;
+  margin: 15px;
 }
 
 .detail-icon {
   width: 50px;
   margin: 3px;
+}
+
+#gender-neutral {
+  width: 220px;
 }

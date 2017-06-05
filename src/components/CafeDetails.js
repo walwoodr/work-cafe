@@ -29,7 +29,7 @@ export default (props) => {
   }
 
   var bathroom;
-  props.cafeDetails.details.genderNeutralRestrooms ? bathroom=<div className="detail-div"><img src={toilet} className="detail-icon" alt="Gender Neutral Restroom" /><p>Gender Neutral Restroom</p></div> : bathroom='';
+  props.cafeDetails.details.genderNeutralRestrooms ? bathroom=<div className="detail-div" id="gender-neutral"><img src={toilet} className="detail-icon" alt="Gender Neutral Restroom" /><p>Gender Neutral Restroom</p></div> : bathroom='';
 
   // make this as a function that takes in the coffee and tea detail arguments?
   var coffeeTeaQuality = function(quality){
