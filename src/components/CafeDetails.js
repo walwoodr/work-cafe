@@ -14,6 +14,7 @@ import tea from '../icons/tea.svg';
 import vegan from '../icons/vegan.svg';
 import working from '../icons/working.svg';
 import gluten_free from '../icons/gluten_free.svg';
+import toilet from '../icons/toilet.svg';
 import '../styles/cafeDetails.css'
 
 export default (props) => {
@@ -26,6 +27,9 @@ export default (props) => {
   } else {
     outlets = <div className="detail-div"><img src={few_outlets} className="detail-icon" alt="few outlets" /><p>Few outlets</p></div>
   }
+
+  var bathroom;
+  props.cafeDetails.details.genderNeutralRestrooms ? bathroom=<div className="detail-div"><img src={toilet} className="detail-icon" alt="Gender Neutral Restroom" /><p>Gender Neutral Restroom</p></div> : bathroom='';
 
   // make this as a function that takes in the coffee and tea detail arguments?
   var coffeeTeaQuality = function(quality){
@@ -47,10 +51,10 @@ export default (props) => {
                 {props.cafeDetails.details.food.includes("full meal") ? <div className="category-item-div"><img src={dinner} className="detail-icon" alt="full meal" /><p>Full Meal</p></div> : ''}
              </div>;
 
-  var vibe = <div id="vibe">
-              {props.cafeDetails.details.vibe.includes("families") ? <div className="detail-div"><img src={kids} className="detail-icon" alt="families" /><p>Families</p></div> : ''}
+  var vibe = <div id="vibe" className="multi-detail">
               {props.cafeDetails.details.vibe.includes("working") ? <div className="detail-div"><img src={working} className="detail-icon" alt="working" /><p>Working</p></div> : ''}
               {props.cafeDetails.details.vibe.includes("networking") ? <div className="detail-div"><img src={networking} className="detail-icon" alt="networking" /><p>Networking</p></div> : ''}
+              {props.cafeDetails.details.vibe.includes("families") ? <div className="detail-div"><img src={kids} className="detail-icon" alt="families" /><p>Families</p></div> : ''}
             </div>;
 
   return (
@@ -60,7 +64,7 @@ export default (props) => {
       <div className="category-item-div"><img src={coffee_beans} className="detail-icon" alt="coffee beans" /><p> {coffeeTeaQuality(props.cafeDetails.details.coffeeQuality)} Coffee</p></div>
       <div className="category-item-div"><img src={tea} className="detail-icon" alt="tea" /><p>{coffeeTeaQuality(props.cafeDetails.details.teaQuality)} Tea</p></div>
       </div>
-      {outlets}
+      <div id="amenities" className="multi-detail">{outlets}{bathroom}</div>
       {food}
       {vibe}
     </div>

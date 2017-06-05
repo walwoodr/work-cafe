@@ -6,7 +6,7 @@
 }
 
 .detail-div,
-#vibe,
+.multi-detail,
 .category-detail-div {
   margin: 25px auto 25px auto;
 }
@@ -43,7 +43,7 @@
   margin: 0 7px;
 }
 
-#vibe div {
+.multi-detail div {
   display: inline-block;
   margin: 0 15px;
 }
