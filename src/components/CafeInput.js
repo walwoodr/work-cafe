@@ -4,47 +4,88 @@ import '../styles/cafeInput.css';
 export default class CafeInput extends React.Component {
   render(){
     return (
-      <div>
+      <div className="cafe-form">
         <p> This is the input component</p>
         <form>
-          <h4>The Vibe of the place</h4>
-          <label htmlFor="networking">Networking</label><input type="checkbox" id="networking" />
-          <label htmlFor="working">Working</label><input type="checkbox" id="working" />
-          <label htmlFor="families">Families</label><input type="checkbox" id="families" />
 
-          <h4>Food availability</h4>
-          <label htmlFor="pastries">Pastries</label><input type="checkbox" id="pastries" />
-          <label htmlFor="gluten-free">Gluten Free</label><input type="checkbox" id="gluten-free" />
-          <label htmlFor="vegan">Vegan</label><input type="checkbox" id="vegan" />
-          <label htmlFor="light-meal">Light Meal</label><input type="checkbox" id="light-meal" />
-          <label htmlFor="full-meal">Full meal</label><input type="checkbox" id="full-meal" />
+          <div>
+            <h4>Coffee Quality</h4>
 
-          <h4>Amenities</h4>
-          <label htmlFor="families">Gender Neutral Bathrooms</label><input type="checkbox" id="families" />
-          <br />
-          <label>Outlet situation</label>
-          <select>
-          <option></option>
-          <option value="few_outlets">Few Outlets</option>
-          <option value="some_outlets">Some Outlets</option>
-          <option value="many_outlets">Many Outlets</option>
-          </select>
+            <input type="radio" name="coffee" value="decent-coffee" />
+            <label htmlFor="decent-coffee">Decent Coffee</label><br/>
 
+            <input type="radio" name="coffee" value="good-coffee" />
+            <label htmlFor="good-coffee">Good Coffee</label><br/>
 
-          <h4>Coffee Quality</h4>
-          <select>
-            <option></option>
-            <option value="decent">Decent</option>
-            <option value="good">Good</option>
-            <option value="exceptional">Exceptional</option>
-          </select>
+            <input type="radio" name="coffee" value="exceptional-coffee" />
+            <label htmlFor="exceptional-coffee">Exceptional Coffee</label><br/>
+          </div>
 
-          <h4>Tea Quality</h4>
-          <select>
-            <option></option>
-            <option value="good">Good</option>
-            <option value="exceptional">Exceptional</option>
-          </select>
+          <div>
+            <h4>Tea Quality</h4>
+
+            <input type="radio" name="tea" value="decent-tea" />
+            <label htmlFor="decent-tea">Decent Tea</label><br/>
+
+            <input type="radio" name="tea" value="good-tea" />
+            <label htmlFor="good-tea">Good Tea</label><br/>
+
+            <input type="radio" name="tea" value="exceptional-tea" />
+            <label htmlFor="exceptional-tea">Exceptional Tea</label><br/>
+          </div>
+
+          <div>
+            <h4>The Vibe of the place</h4>
+
+            <input type="checkbox" id="networking" />
+            <label htmlFor="networking">Networking</label>
+
+            <input type="checkbox" id="working" />
+            <label htmlFor="working">Working</label>
+
+            <input type="checkbox" id="families" />
+            <label htmlFor="families">Families</label>
+          </div>
+
+          <div>
+            <h4>Available Food</h4>
+
+            <input type="checkbox" id="pastries" />
+            <label htmlFor="pastries">Pastries</label>
+
+            <input type="checkbox" id="gluten-free" />
+            <label htmlFor="gluten-free">Gluten Free</label>
+
+            <input type="checkbox" id="vegan" />
+            <label htmlFor="vegan">Vegan</label>
+
+            <input type="checkbox" id="light-meal" />
+            <label htmlFor="light-meal">Light Meal</label>
+
+            <input type="checkbox" id="full-meal" />
+            <label htmlFor="full-meal">Full meal</label>
+          </div>
+
+          <div>
+            <h4>Amenities</h4>
+
+            <input type="checkbox" id="families" />
+            <label htmlFor="families">Gender Neutral Bathrooms</label>
+            <br />
+
+            <h5>Outlets</h5>
+
+            <input type="radio" name="outlets" value="few-outlets" />
+            <label htmlFor="few-outelts">Few Outlets</label><br/>
+
+            <input type="radio" name="outlets" value="some-outlets" />
+            <label htmlFor="some-outelts">Some Outlets</label><br/>
+
+            <input type="radio" name="outlets" value="many-outlets" />
+            <label htmlFor="many-outelts">Many Outlets</label><br/>
+
+          </div>
+
           <br />
           <input type="submit" />
         </form>
