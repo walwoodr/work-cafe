@@ -11,7 +11,7 @@ const cafeDetails = {
   website: "bluemooncoffeecafe.com",
   details: {
     outlets: "some",
-    vibe: ["families", "networking", "people working"],
+    vibe: ["families", "networking", "working"],
     food: ["pastries", "vegan", "light meal", "full meal", "gluten free"],
     genderNeutralRestrooms: true,
     coffeeQuality: "medium",
