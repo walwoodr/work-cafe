@@ -1,4 +1,6 @@
 function changeZipcode(newzip){
+  console.log("changing zip code to");
+  console.log(newzip);
   return {
     type: "CHANGE_ZIPCODE",
     payload: newzip

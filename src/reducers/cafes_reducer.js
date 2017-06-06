@@ -1,13 +1,11 @@
 export default function(state = [], action){
   switch (action.type) {
-    case 'LOADING':
-      console.log("loading");
-      let loading = Object.assign({}, loading: true);
-      return state.concat(loading)
     case 'LOAD_CAFES':
-      let cafes = Object.assign({}, cafes: action.payload);
+      console.log("load cafes reducer");
+      let cafes = action.payload;
       return state.concat(cafes)
     case 'MODIFY_CAFE':
+      // TODO: this needs to be fixed. It almost certainly doesn't work. 
       let cafe = Object.assign({}, action.payload);
       return state.concat(cafe)
     default:
