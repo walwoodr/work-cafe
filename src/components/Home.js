@@ -1,13 +1,11 @@
 import React from 'react';
 import SearchField from './SearchField';
-import { dispatch } from 'redux';
-import { bindActionCreators } from 'react-redux';
 
-export class Home extends React.Component {
+export default class Home extends React.Component {
   render(){
     return (
       <div>
-        <SearchField />
+        <SearchField app_state={this.props.app_state} cafes={this.props.cafes} changeZipcode={this.props.changeZipcode} loadData={this.props.loadData} />
         <div id="app-intro">
           <p>
             Where do you want to work today? Type in your zip code or city and explore the options without getting bogged down with unnecessary details.
@@ -20,9 +18,3 @@ export class Home extends React.Component {
     )
   }
 };
-
-const mapStateToProps = (state) => {
-  return {cafes: state.cafes}
-};
-
-export default connect(mapStateToProps)(Home)
