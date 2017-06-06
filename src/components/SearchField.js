@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/searchField.css';
-import fetchAPI from '../actions/getAPI';
+import fetchAPI from '../actions/fetchAPI';
 
 export default class SearchField extends React.Component {
   constructor(props){
@@ -12,7 +12,6 @@ export default class SearchField extends React.Component {
 
   handleChange(e){
     e.preventDefault();
-    console.log(this.state.zipcode);
     this.setState({
       zipcode: e.target.value
     })
@@ -20,9 +19,7 @@ export default class SearchField extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    // TODO: fetch data
-    console.log("fetching data now");
-    fetchAPI(this.state.zipcode);
+    let data = fetchAPI(this.state.zipcode);
   }
 
   render(){

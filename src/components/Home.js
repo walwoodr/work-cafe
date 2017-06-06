@@ -1,11 +1,9 @@
 import React from 'react';
 import SearchField from './SearchField';
+import { dispatch } from 'redux';
+import { bindActionCreators } from 'react-redux';
 
-export default class Home extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
+export class Home extends React.Component {
   render(){
     return (
       <div>
@@ -21,4 +19,10 @@ export default class Home extends React.Component {
       </div>
     )
   }
-}
+};
+
+const mapStateToProps = (state) => {
+  return {cafes: state.cafes}
+};
+
+export default connect(mapStateToProps)(Home)

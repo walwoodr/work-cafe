@@ -4,6 +4,17 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 
 class App extends Component {
+  bodyContent(){
+    var content = '';
+
+    if (this.props.loading) {
+      content = <img src={logo} className="App-logo" alt="logo" />
+    } else {
+      content = <Home />
+    }
+    return content
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,7 +22,7 @@ class App extends Component {
           <h2>Covfefe</h2>
           <NavBar />
         </div>
-        <Home />
+        {bodyContent()}
       </div>
     );
   }
@@ -20,4 +31,4 @@ class App extends Component {
 export default App;
 
 
-  // <img src={logo} className="App-logo" alt="logo" />
+  //
