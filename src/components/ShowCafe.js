@@ -9,29 +9,27 @@ const cafeDetails = {
   address: "Lake Street and 39th Avenue South, Minenapolis MN",
   hours: "7am-10pm Every day",
   website: "bluemooncoffeecafe.com",
-  details: {
-    outlets: "some",
-    vibe: ["families", "networking", "working"],
-    food: ["pastries", "vegan", "light meal", "full meal", "gluten free"],
-    genderNeutralRestrooms: true,
-    coffeeQuality: "medium",
-    teaQuality: "medium",
-    notes: [
-      {
-        user: "Cindy",
-        note: "I love this place!",
-        validated: true,
-      }, {
-        user: "Rachel",
-        note: "Nice place to work",
-        validated: false,
-      }, {
-        user: "Amanda",
-        note: "Queer friendly",
-        validated: true,
-      }
-    ]
-  }
+  outlets: "some",
+  vibe: ["families", "networking", "working"],
+  food: ["pastries", "vegan", "light meal", "full meal", "gluten free"],
+  genderNeutralRestrooms: true,
+  coffeeQuality: "medium",
+  teaQuality: "medium",
+  notes: [
+    {
+      user: "Cindy",
+      note: "I love this place!",
+      validated: true,
+    }, {
+      user: "Rachel",
+      note: "Nice place to work",
+      validated: false,
+    }, {
+      user: "Amanda",
+      note: "Queer friendly",
+      validated: true,
+    }
+  ]
 };
 
 const props = {cafeDetails: cafeDetails};
