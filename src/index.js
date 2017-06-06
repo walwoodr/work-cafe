@@ -1,20 +1,39 @@
+// Libs
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { Route, Router, browserHistory } from 'react-router';
+import { Router, Route } from 'react-router';
+import { createBrowserHistory } from 'history';
 import thunk from 'redux-thunk';
+
+// Components
+import App from './App';
+import SearchField from './components/SearchField';
+import ShowCafe from './components/ShowCafe';
+import CafeIndex from './components/CafeIndex';
+
+// Reducer
+import reducer from './reducers/index';
+
+// Styles
 import './styles/index.css';
 import './styles/normalize.css';
 import './styles/skeleton.css';
-import reducer from './reducers/index';
 
-const store = createStore(reducer, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f))
+const store = createStore(reducer, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
+
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App store={store}/>
+    <Router history={history}>
+      <App>
+        <Route path="/cafes/" component={CafeIndex} />
+        <Route path="/cafes/:id" component={ShowCafe} />
+        <Route path="/search" component={SearchField} />
+      </App>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
