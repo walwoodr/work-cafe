@@ -1,10 +1,10 @@
 // Libs
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Actions
-import { loadData, modifyCafe } from '../actions/cafe_actions';
+import { loadData } from '../actions/cafe_actions';
 import { changeZipcode, loadingApp, appLoaded } from '../actions/app_state_actions';
 
 // Components
@@ -12,7 +12,12 @@ import SearchField from './SearchField';
 
 export class Home extends React.Component {
   render(){
-    return (
+    if (this.props.app_state.loading){
+      return (
+          <p>Brewing up your cafes.</p>
+        )
+    } else {
+      return (
       <div>
         <SearchField app_state={this.props.app_state} cafes={this.props.cafes} changeZipcode={this.props.changeZipcode} loadData={this.props.loadData} />
         <div id="app-intro">
@@ -25,6 +30,7 @@ export class Home extends React.Component {
         </div>
       </div>
     )
+    }
   }
 };
 

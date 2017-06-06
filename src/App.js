@@ -1,3 +1,5 @@
+//TODO: this doesn't need to be a container component
+
 // Libs
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -7,7 +9,6 @@ import { bindActionCreators } from 'redux';
 import './styles/App.css';
 
 // Components
-import Home from './components/Home';
 import NavBar from './components/NavBar';
 
 // Actions

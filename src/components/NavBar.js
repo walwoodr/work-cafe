@@ -3,7 +3,8 @@ import React from 'react';
 var NavBar = (props) => {
   return (
     <ul>
-      <li>Nav bar</li>
+      <li><a href="/search">Search</a></li>
+      <li><a href="/cafes">Cafes</a></li>
     </ul>
   )
 }

@@ -29,7 +29,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <App>
-        <Route path="/cafes/" component={CafeIndex} />
+        <Route path="/cafes" component={CafeIndex} />
         <Route path="/cafes/:id" component={ShowCafe} />
         <Route path="/search" component={Home} />
       </App>
