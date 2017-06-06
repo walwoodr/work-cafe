@@ -17,8 +17,10 @@ p {
   color: #F6F2ED;
 }
 
-.App-intro {
+#app-intro {
   font-size: large;
+  width: 85%;
+  margin: 0 auto;
 }
 
 @keyframes App-logo-spin {

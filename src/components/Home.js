@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchField from './SearchField';
-import ShowCafe from './ShowCafe';
 
 export default class Home extends React.Component {
   constructor(props){
@@ -11,10 +10,14 @@ export default class Home extends React.Component {
     return (
       <div>
         <SearchField />
-        <p className="App-intro">
-          Description of the app.
-        </p>
-        <ShowCafe />
+        <div id="app-intro">
+          <p>
+            Where do you want to work today? Type in your zip code or city and explore the options without getting bogged down with unnecessary details.
+          </p>
+          <p>
+            Then pay it forward by sharing the key information you need to work from a coffee shop.
+          </p>
+        </div>
       </div>
     )
   }

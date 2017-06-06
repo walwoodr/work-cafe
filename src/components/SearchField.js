@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/searchField.css';
+import fetchAPI from '../actions/getAPI';
 
 export default class SearchField extends React.Component {
   constructor(props){
@@ -20,8 +21,8 @@ export default class SearchField extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     // TODO: fetch data
-    // console.log("fetching data now");
-    // fetchData(this.state.zipcode);
+    console.log("fetching data now");
+    fetchAPI(this.state.zipcode);
   }
 
   render(){
