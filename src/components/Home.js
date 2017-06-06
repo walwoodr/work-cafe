@@ -1,7 +1,16 @@
-import React from 'react';
+// Libs
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+// Actions
+import { loadData, modifyCafe } from '../actions/cafe_actions';
+import { changeZipcode, loadingApp, appLoaded } from '../actions/app_state_actions';
+
+// Components
 import SearchField from './SearchField';
 
-export default class Home extends React.Component {
+export class Home extends React.Component {
   render(){
     return (
       <div>
@@ -18,3 +27,18 @@ export default class Home extends React.Component {
     )
   }
 };
+
+const mapStateToProps = (state) => {
+  return {cafes: state.cafes, app_state: state.app_state}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    loadData: loadData,
+    changeZipcode: changeZipcode,
+    loadingApp: loadingApp,
+    appLoaded: appLoaded
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

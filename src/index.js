@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 
 // Components
 import App from './App';
-import SearchField from './components/SearchField';
+import Home from './components/Home';
 import ShowCafe from './components/ShowCafe';
 import CafeIndex from './components/CafeIndex';
 
@@ -31,7 +31,7 @@ ReactDOM.render(
       <App>
         <Route path="/cafes/" component={CafeIndex} />
         <Route path="/cafes/:id" component={ShowCafe} />
-        <Route path="/search" component={SearchField} />
+        <Route path="/search" component={Home} />
       </App>
     </Router>
   </Provider>,

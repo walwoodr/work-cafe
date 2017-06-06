@@ -1,24 +1,20 @@
+// Libs
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+// Styles
 import './styles/App.css';
+
+// Components
 import Home from './components/Home';
 import NavBar from './components/NavBar';
+
+// Actions
 import { loadData, modifyCafe } from './actions/cafe_actions';
 import { changeZipcode, loadingApp, appLoaded } from './actions/app_state_actions';
 
 export class App extends Component {
-  bodyContent(){
-    var content = '';
-
-    if (this.props.app_state.loading) {
-      content = <p>Page is loading</p>
-    } else {
-      content = <Home app_state={this.props.app_state} cafes={this.props.cafes} changeZipcode={this.props.changeZipcode} loadData={this.props.loadData} />
-    }
-    return content
-  }
-
   render() {
     return (
       <div className="App">
@@ -26,7 +22,7 @@ export class App extends Component {
           <h2>Covfefe</h2>
           <NavBar />
         </div>
-        {this.bodyContent()}
+        {this.props.children}
       </div>
     );
   }
