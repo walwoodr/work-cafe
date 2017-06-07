@@ -9,6 +9,7 @@ const SearchField = (props) => {
 
   let handleSubmit = (e) => {
     e.preventDefault(); props.loadData(props.app_state.zipcode);
+    window.history.pushState(null, 'cafes');
   }
 
   return (

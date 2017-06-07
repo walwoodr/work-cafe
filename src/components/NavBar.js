@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 var NavBar = (props) => {
   return (
     <ul>
-      <li><a href="/search">Search</a></li>
-      <li><a href="/cafes">Cafes</a></li>
+      <li><Link to={'/search'}>Search</Link></li>
+      <li><Link to={'/cafes'}>Cafes</Link></li>
     </ul>
   )
 }
