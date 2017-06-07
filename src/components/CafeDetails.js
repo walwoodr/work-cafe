@@ -1,3 +1,4 @@
+// Libs
 import React from 'react';
 
 // Components
@@ -12,6 +13,10 @@ import '../styles/cafeDetails.css'
 
 export default class CafeDetails extends React.Component{
 
+  handleOutletClick = (e) => {
+    this.props.editingDetail("outlet");
+  }
+
   render(){
     return (
       <div id="cafe-details">
@@ -24,6 +29,8 @@ export default class CafeDetails extends React.Component{
         <div id="amenities" className="multi-detail">
           <Outlets
             outlets={this.props.cafeDetails.outlets}
+            handleClick={this.handleOutletClick}
+            editing={this.props.editing === "outlet" ? true : false}
           />
           <Bathroom
             bathroom={this.props.cafeDetails.genderNeutralRestrooms}
@@ -37,7 +44,7 @@ export default class CafeDetails extends React.Component{
         <Vibe
           vibe={this.props.cafeDetails.vibe}
         />
-        
+
       </div>
     )
   }

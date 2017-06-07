@@ -17,8 +17,16 @@ function appLoaded(){
   }
 }
 
+function editingDetail(element){
+  return {
+    type: "EDITING",
+    payload: element
+  }
+}
+
 export {
   changeZipcode,
   loadingApp,
-  appLoaded
+  appLoaded,
+  editingDetail
 };

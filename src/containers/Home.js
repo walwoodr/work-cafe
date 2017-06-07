@@ -15,7 +15,6 @@ import AppIntro from '../components/AppIntro';
 export class Home extends React.Component {
   componentWillUpdate(){
     if (this.props.app_state.loading) {
-      console.log("loading to cafes")
       this.props.history.push("/cafes");
     }
   }

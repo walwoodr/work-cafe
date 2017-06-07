@@ -1,6 +1,10 @@
 // Libs
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+// actions
+import { editingDetail } from '../actions/app_state_actions';
 
 // Components
 import CafeDetails from './CafeDetails';
@@ -19,7 +23,11 @@ export class ShowCafe extends React.Component {
         </div>
 
         <div id="show-cafe" className="six columns">
-          <CafeDetails cafeDetails={this.props.cafe} />
+          <CafeDetails
+            cafeDetails={this.props.cafe}
+            editingDetail={this.props.editingDetail}
+            editing={this.props.app_state.editing}
+           />
         </div>
 
         <div className="three columns padding-div">
@@ -35,10 +43,16 @@ function mapStateToProps(state, ownProps){
   // eslint-disable-next-line
   const cafe = state.cafes.find((cafe) => cafe.id == ownProps.match.params.id);
   if (cafe) {
-    return {cafe: cafe}
+    return {cafe: cafe, app_state: state.app_state}
   } else {
-    return {cafe: {}}
+    return {cafe: {}, app_state: state.app_state}
   }
 }
 
-export default connect(mapStateToProps)(ShowCafe)
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    editingDetail: editingDetail
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowCafe)
