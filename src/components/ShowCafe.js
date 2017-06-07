@@ -10,14 +10,28 @@ import CafeInput from './CafeInput';
 import '../styles/showCafe.css';
 
 export class ShowCafe extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      editing: false
+    }
+  }
+
+  handleClick(e){
+    e.preventDefault();
+    this.setState({
+      editing: true
+    })
+  }
+
   render(){
     return (
       <div className="row">
+        <h2>{this.props.cafe.name}</h2>
         <div className="three columns padding-div"><p>.</p></div>
         <div id="show-cafe" className="six columns">
-          <h2>{this.props.cafe.name}</h2>
-          <CafeDetails cafeDetails={this.props.cafe} />
-          <CafeInput />
+          {this.state.editing ? <CafeInput /> : <CafeDetails cafeDetails={this.props.cafe} />}
+          {this.state.editing ? '' : <button onClick={(e)=> this.handleClick(e)}>Share your knowledge</button>}
         </div>
         <div className="three columns padding-div"><p>.</p></div>
       </div>
