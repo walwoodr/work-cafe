@@ -7,14 +7,14 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom'
 
 // Styles
-import './styles/App.css';
+import '../styles/App.css';
 
 // Components
-import NavBar from './components/NavBar';
+import NavBar from '../components/NavBar';
 
 // Actions
-import { loadData, modifyCafe } from './actions/cafe_actions';
-import { changeZipcode, loadingApp, appLoaded } from './actions/app_state_actions';
+import { loadData, modifyCafe } from '../actions/cafe_actions';
+import { changeZipcode, loadingApp, appLoaded } from '../actions/app_state_actions';
 
 export class App extends Component {
   render() {

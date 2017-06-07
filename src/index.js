@@ -8,8 +8,8 @@ import { createBrowserHistory } from 'history';
 import thunk from 'redux-thunk';
 
 // Components
-import App from './App';
-import Home from './components/Home';
+import App from './containers/App';
+import Home from './containers/Home';
 import ShowCafe from './components/ShowCafe';
 import CafeIndex from './components/CafeIndex';
 

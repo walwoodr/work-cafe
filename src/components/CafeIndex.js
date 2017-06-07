@@ -11,16 +11,20 @@ import { loadingApp, appLoaded } from '../actions/app_state_actions';
 import IndexCafe from './IndexCafe';
 
 export class CafeIndex extends React.Component {
+  componentWillMount(){
+    if (this.props.cafes.length === 0 ) {
+      this.props.history.push("/search");
+    }
+  }
+
   render(){
-    console.log(this.props.cafes);
     var cafeHTML = this.props.cafes.map((cafe)=>{
-      return (<IndexCafe cafe={cafe} />)
+      return (<IndexCafe cafe={cafe} key={cafe.id} />)
     });
-    console.log(cafeHTML);
+
     return (
       <div>
-        <p>Many cafes</p>
-        <p>{cafeHTML}</p>
+        {cafeHTML}
       </div>
     )
   }
