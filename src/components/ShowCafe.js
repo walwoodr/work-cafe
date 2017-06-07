@@ -30,7 +30,7 @@ export class ShowCafe extends React.Component {
         <h2>{this.props.cafe.name}</h2>
         <div className="three columns padding-div"><p>.</p></div>
         <div id="show-cafe" className="six columns">
-          {this.state.editing ? <CafeInput /> : <CafeDetails cafeDetails={this.props.cafe} />}
+          {this.state.editing ? <CafeInput cafeDetails={this.props.cafe} /> : <CafeDetails cafeDetails={this.props.cafe} />}
           {this.state.editing ? '' : <button onClick={(e)=> this.handleClick(e)}>Share your knowledge</button>}
         </div>
         <div className="three columns padding-div"><p>.</p></div>
@@ -40,6 +40,7 @@ export class ShowCafe extends React.Component {
 }
 
 function mapStateToProps(state, ownProps){
+  // eslint-disable-next-line
   const cafe = state.cafes.find((cafe) => cafe.id == ownProps.match.params.id);
   if (cafe) {
     return {cafe: cafe}

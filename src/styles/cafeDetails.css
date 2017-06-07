@@ -54,6 +54,16 @@
   margin: 3px;
 }
 
+.edit-detail {
+  background-color: rgba(255, 255, 255, 0.40);
+}
+
+p.note {
+  font-size: .6em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.4);
+}
+
 #gender-neutral {
   width: 220px;
 }
