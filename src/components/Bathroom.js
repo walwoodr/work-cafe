@@ -14,8 +14,14 @@ export default (props) => {
       <img src={gendered_toilet} className="detail-icon" alt="Gender Segregated Restroom" />
       <p>Gender Segregated Restrooms</p>
     </div>
+  } else if (props.editing) {
+    bathroom = <div className="edit-detail detail-div" id="gender-neutral" onClick={(e) => props.handleBlur(e)}>
+      <img src={gendered_toilet} className="detail-icon" alt="Gender Segregated Restroom" />
+      <p>Editing this now</p>
+      <p className="note">click to close</p>
+    </div>
   } else {
-    bathroom = <div className="edit-detail detail-div" id="gender-neutral" onClick={(e) => console.log("clicked bathroom")}>
+    bathroom = <div className="edit-detail detail-div" id="gender-neutral" onClick={(e) => props.handleClick(e)}>
       <img src={gendered_toilet} className="detail-icon" alt="Gender Segregated Restroom" />
       <p>Restrooms unknown</p>
       <p className="note">click to edit</p>

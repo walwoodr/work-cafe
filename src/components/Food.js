@@ -8,9 +8,20 @@ import gluten_free from '../icons/gluten_free.svg';
 
 export default (props) => {
   var food;
-  if (props.food.length === 0) {
+  if (props.editing) {
     food = (
-      <div className="edit-detail category-detail-div">
+      <div className="edit-detail category-detail-div" onClick={(e)=>props.handleBlur(e)}>
+        <h3>Food</h3>
+
+        <img src={croissant} className="detail-icon" alt="pastries" />
+        <p>Editing this now</p>
+        <p className="note">click to close</p>
+
+      </div>
+    )
+  } else if (props.food.length === 0) {
+    food = (
+      <div className="edit-detail category-detail-div" onClick={(e) => props.handleClick(e)}>
         <h3>Food</h3>
 
         <img src={croissant} className="detail-icon" alt="pastries" />

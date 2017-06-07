@@ -15,7 +15,13 @@ export default (props) => {
     if (drinkProp) {
       return (<p>{drinkProp}</p>)
     } else if (props.editing) {
-      return (<div onClick={(e)=>props.handleBlur(e)}><p>Editing this now</p><p className="note">click to close</p></div>)
+      return (
+        <div onClick={(e)=>props.handleBlur(e)}>
+          <form>
+            
+          </form>
+          <p className="note">click to close</p>
+        </div>)
     } else {
       return (<div onClick={(e) => props.handleClick(e)}><p>Unknown {type}</p><p className="note">click to edit</p></div>)
     }

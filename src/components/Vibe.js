@@ -6,9 +6,19 @@ import working from '../icons/working.svg';
 
 export default (props) => {
   var vibe;
-  if (props.vibe.length === 0) {
+  if (props.editing) {
     vibe =(
-      <div id="vibe" className="multi-detail">
+      <div id="vibe" className="multi-detail" onClick={(e)=>props.handleBlur(e)}>
+        <div className="edit-detail detail-div">
+          <img src={working} className="detail-icon" alt="unknown" />
+          <p>Editing this now</p>
+          <p className="note">click to close</p>
+        </div>
+      </div>
+    )
+  } else if (props.vibe.length === 0) {
+    vibe =(
+      <div id="vibe" className="multi-detail" onClick={(e) => props.handleClick(e)}>
         <div className="edit-detail detail-div">
           <img src={working} className="detail-icon" alt="unknown" />
           <p>Vibe unknown</p>

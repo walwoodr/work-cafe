@@ -34,7 +34,6 @@ export default class CafeDetails extends React.Component{
   }
 
   handleBlur = (e) => {
-    console.log("blurring")
     this.props.editingDetail("");
   }
 
