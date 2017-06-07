@@ -17,6 +17,27 @@ export default class CafeDetails extends React.Component{
     this.props.editingDetail("outlet");
   }
 
+  handleCoffeeTeaClick = (e) => {
+    this.props.editingDetail("coffeeTea");
+  }
+
+  handleBathroomClick = (e) => {
+    this.props.editingDetail("bathroom");
+  }
+
+  handleFoodClick = (e) => {
+    this.props.editingDetail("food");
+  }
+
+  handleVibeClick = (e) => {
+    this.props.editingDetail("vibe");
+  }
+
+  handleBlur = (e) => {
+    console.log("blurring")
+    this.props.editingDetail("");
+  }
+
   render(){
     return (
       <div id="cafe-details">
@@ -24,6 +45,9 @@ export default class CafeDetails extends React.Component{
         <CoffeeTea
           coffee={this.props.cafeDetails.coffeeQuality}
           tea={this.props.cafeDetails.teaQuality}
+          handleClick={this.handleCoffeeTeaClick}
+          editing={this.props.editing === "coffeeTea" ? true : false}
+          handleBlur={this.handleBlur}
         />
 
         <div id="amenities" className="multi-detail">
@@ -31,18 +55,28 @@ export default class CafeDetails extends React.Component{
             outlets={this.props.cafeDetails.outlets}
             handleClick={this.handleOutletClick}
             editing={this.props.editing === "outlet" ? true : false}
+            handleBlur={this.handleBlur}
           />
           <Bathroom
             bathroom={this.props.cafeDetails.genderNeutralRestrooms}
+            handleClick={this.handleBathroomClick}
+            editing={this.props.editing === "bathroom" ? true : false}
+            handleBlur={this.handleBlur}
           />
         </div>
 
         <Food
           food={this.props.cafeDetails.food}
+          handleClick={this.handleFoodClick}
+          editing={this.props.editing === "food" ? true : false}
+          handleBlur={this.handleBlur}
         />
 
         <Vibe
           vibe={this.props.cafeDetails.vibe}
+          handleClick={this.handleVibeClick}
+          editing={this.props.editing === "vibe" ? true : false}
+          handleBlur={this.handleBlur}
         />
 
       </div>

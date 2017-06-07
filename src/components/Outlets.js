@@ -13,7 +13,7 @@ const Outlets = (props) => {
   } else if (props.outlets === "few"){
     outlets = <div className="detail-div"><img src={few_outlets} className="detail-icon" alt="few outlets" /><p>Few outlets</p></div>
   } else if (props.editing){
-    outlets = <p>Editing this now</p>
+    outlets = <div className="edit-detail detail-div"><p>Editing this now</p><p className="note" onClick={(e)=>props.handleBlur(e)}>click to close</p></div>
   } else {
     outlets = <div className="edit-detail detail-div" onClick={(e) => props.handleClick(e)}><img src={some_outlets} className="detail-icon" alt="unknown" /><p>Outlets unknown</p><p className="note">click to edit</p></div>
   }
