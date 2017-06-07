@@ -26,7 +26,7 @@ export class ShowCafe extends React.Component {
 }
 
 function mapStateToProps(state, ownProps){
-  const cafe = state.cafes.find((cafe) => cafe.id == ownProps.routeParams.id);
+  const cafe = state.cafes.find((cafe) => cafe.id == ownProps.match.params.id);
   if (cafe) {
     return {cafe: cafe}
   } else {

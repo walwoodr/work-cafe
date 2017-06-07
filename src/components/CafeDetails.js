@@ -18,14 +18,18 @@ import toilet from '../icons/toilet.svg';
 import '../styles/cafeDetails.css'
 
 export default (props) => {
+  console.log("props")
+  console.log(props)
   var outlets;
   if (props.cafeDetails.outlets === "many") {
     outlets = <div className="detail-div"><img src={many_outlets} className="detail-icon" alt="many outlets" /><p>Many outlets</p></div>
   } else if (props.cafeDetails.outlets === "some") {
     outlets =
     <div className="detail-div"><img src={some_outlets} className="detail-icon" alt="some outlets" /><p>Some outlets</p></div>
-  } else {
+  } else if (props.cafeDetails.outlets === "few"){
     outlets = <div className="detail-div"><img src={few_outlets} className="detail-icon" alt="few outlets" /><p>Few outlets</p></div>
+  } else {
+    outlets = ''
   }
 
   var bathroom;
@@ -33,23 +37,28 @@ export default (props) => {
 
   // make this as a function that takes in the coffee and tea detail arguments?
   var coffeeTeaQuality = function(quality){
-    if (quality === "low") {
-      return "Decent"
-    } else if (quality === "medium") {
-      return "Good"
+    if (quality !== null) {
+      var qualifier = quality.split(" ")[0]
+      return qualifier
     } else {
-      return "Exceptional"
+      return "unknown"
     }
   }
 
-  var food = <div className="category-detail-div">
-                <h3>Food</h3>
-                {props.cafeDetails.food.includes("pastries") ? <div className="category-item-div"><img src={croissant} className="detail-icon" alt="pastries" /><p>Pastries</p></div> : ''}
-                {props.cafeDetails.food.includes("vegan") ? <div className="category-item-div"><img src={vegan} className="detail-icon" alt="vegan" /><p>Vegan Options</p></div> : ''}
-                {props.cafeDetails.food.includes("gluten free") ? <div className="category-item-div"><img src={gluten_free} className="detail-icon" alt="gluten free" /><p>Gluten Free</p></div> : ''}
-                {props.cafeDetails.food.includes("light meal") ? <div className="category-item-div"><img src={sandwich} className="detail-icon" alt="light meal" /><p>Light Meal</p></div> : ''}
-                {props.cafeDetails.food.includes("full meal") ? <div className="category-item-div"><img src={dinner} className="detail-icon" alt="full meal" /><p>Full Meal</p></div> : ''}
-             </div>;
+  var food;
+
+  if (props.cafeDetails.food !== []) {
+    food = (<div className="category-detail-div">
+                  <h3>Food</h3>
+                  {props.cafeDetails.food.includes("pastries") ? <div className="category-item-div"><img src={croissant} className="detail-icon" alt="pastries" /><p>Pastries</p></div> : ''}
+                  {props.cafeDetails.food.includes("vegan") ? <div className="category-item-div"><img src={vegan} className="detail-icon" alt="vegan" /><p>Vegan Options</p></div> : ''}
+                  {props.cafeDetails.food.includes("gluten free") ? <div className="category-item-div"><img src={gluten_free} className="detail-icon" alt="gluten free" /><p>Gluten Free</p></div> : ''}
+                  {props.cafeDetails.food.includes("light meal") ? <div className="category-item-div"><img src={sandwich} className="detail-icon" alt="light meal" /><p>Light Meal</p></div> : ''}
+                  {props.cafeDetails.food.includes("full meal") ? <div className="category-item-div"><img src={dinner} className="detail-icon" alt="full meal" /><p>Full Meal</p></div> : ''}
+               </div>)
+  } else {
+    food = ''
+  }
 
   var vibe = <div id="vibe" className="multi-detail">
               {props.cafeDetails.vibe.includes("working") ? <div className="detail-div"><img src={working} className="detail-icon" alt="working" /><p>Working</p></div> : ''}
