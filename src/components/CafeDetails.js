@@ -46,8 +46,9 @@ export default (props) => {
   }
 
   var food;
-
-  if (props.cafeDetails.food !== []) {
+  if (props.cafeDetails.food.length === 0) {
+    food = ''
+  } else {
     food = (<div className="category-detail-div">
                   <h3>Food</h3>
                   {props.cafeDetails.food.includes("pastries") ? <div className="category-item-div"><img src={croissant} className="detail-icon" alt="pastries" /><p>Pastries</p></div> : ''}
@@ -56,9 +57,9 @@ export default (props) => {
                   {props.cafeDetails.food.includes("light meal") ? <div className="category-item-div"><img src={sandwich} className="detail-icon" alt="light meal" /><p>Light Meal</p></div> : ''}
                   {props.cafeDetails.food.includes("full meal") ? <div className="category-item-div"><img src={dinner} className="detail-icon" alt="full meal" /><p>Full Meal</p></div> : ''}
                </div>)
-  } else {
-    food = ''
   }
+  console.log("food")
+  console.log(food)
 
   var vibe = <div id="vibe" className="multi-detail">
               {props.cafeDetails.vibe.includes("working") ? <div className="detail-div"><img src={working} className="detail-icon" alt="working" /><p>Working</p></div> : ''}
