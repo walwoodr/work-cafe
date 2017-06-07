@@ -1,47 +1,22 @@
+// Libs
 import React from 'react';
-import '../styles/showCafe.css';
+import { connect } from 'react-redux';
+
+// Components
 import CafeDetails from './CafeDetails';
 import CafeInput from './CafeInput';
 
-const cafeDetails = {
-  name: "Blue Moon",
-  zip: "55406",
-  address: "Lake Street and 39th Avenue South, Minenapolis MN",
-  hours: "7am-10pm Every day",
-  website: "bluemooncoffeecafe.com",
-  outlets: "some",
-  vibe: ["families", "networking", "working"],
-  food: ["pastries", "vegan", "light meal", "full meal", "gluten free"],
-  genderNeutralRestrooms: true,
-  coffeeQuality: "medium",
-  teaQuality: "medium",
-  notes: [
-    {
-      user: "Cindy",
-      note: "I love this place!",
-      validated: true,
-    }, {
-      user: "Rachel",
-      note: "Nice place to work",
-      validated: false,
-    }, {
-      user: "Amanda",
-      note: "Queer friendly",
-      validated: true,
-    }
-  ]
-};
+// Styles
+import '../styles/showCafe.css';
 
-const props = {cafeDetails: cafeDetails};
-
-export default class ShowCafe extends React.Component {
+export class ShowCafe extends React.Component {
   render(){
     return (
       <div className="row">
         <div className="three columns padding-div"><p>.</p></div>
         <div id="show-cafe" className="six columns">
-          <h2>{props.cafeDetails.name}</h2>
-          <CafeDetails cafeDetails={props.cafeDetails} />
+          <h2>{this.props.cafe.name}</h2>
+          <CafeDetails cafeDetails={this.props.cafe} />
           <CafeInput />
         </div>
         <div className="three columns padding-div"><p>.</p></div>
@@ -49,3 +24,14 @@ export default class ShowCafe extends React.Component {
     )
   }
 }
+
+function mapStateToProps(state, ownProps){
+  const cafe = state.cafes.find((cafe) => cafe.id == ownProps.routeParams.id);
+  if (cafe) {
+    return {cafe: cafe}
+  } else {
+    return {cafe: {}}
+  }
+}
+
+export default connect(mapStateToProps)(ShowCafe)
