@@ -87,20 +87,44 @@ div.select-option {
   margin-top: 2px;
 }
 
-.multi-option img,
-.multi-option-selected img {
+.category-item-div.multi-option img,
+.category-item-div.multi-option-selected img {
   padding: 3px;
   border-radius: 10px;
 }
 
-.multi-option:hover img {
+.category-item-div.multi-option:hover img {
   background-color: rgba(86, 216, 185, 0.40);
 }
 
-.multi-option-selected img {
+.category-item-div.multi-option-selected img {
   border: 3px solid #56D8B9;
 }
 
-.multi-option-selected:hover img {
+.category-item-div.multi-option-selected:hover img {
   border: 3px solid rgba(86, 216, 185, 0.40);
+}
+
+.detail-div.multi-option,
+.detail-div.multi-option-selected {
+  background-color: rgba(255, 255, 255, 0.40);
+}
+
+.detail-div.multi-option:hover {
+  background-color: rgba(86, 216, 185, 0.40);
+}
+
+.detail-div.multi-option-selected:before {
+  content: "✓";
+  display: block;
+  color: #56D8B9;
+  font-size: 80px;
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.detail-div.multi-option-selected:hover:before {
+  color: rgba(86, 216, 185, 0.40);
+
 }

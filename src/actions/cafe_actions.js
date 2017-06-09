@@ -42,6 +42,11 @@ function modifyCafe(id, property, value){
        type: "MODIFY_CAFE",
        payload: {id: id, property: {food: value}}
      }
+    case 'vibe':
+     return {
+       type: "MODIFY_CAFE",
+       payload: {id: id, property: {vibe: value}}
+     }
     }
 }
 

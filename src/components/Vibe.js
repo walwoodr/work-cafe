@@ -7,13 +7,40 @@ import working from '../icons/working.svg';
 export default (props) => {
   var vibe;
   if (props.editing) {
+    let selectedVibes = props.vibe;
+
+    var addToVibe = (name) => {
+      if (!selectedVibes.includes(name)) {
+        selectedVibes = selectedVibes.concat(name)
+      } else {
+        let idx = selectedVibes.indexOf(name);
+        selectedVibes = [].concat(selectedVibes.slice(0, idx), selectedVibes.slice(idx+1, selectedVibes.length))
+      }
+      props.handleSend("vibe", selectedVibes);
+    };
     vibe =(
-      <div id="vibe" className="multi-detail" onClick={(e)=>props.handleBlur(e)}>
-        <div className="edit-detail detail-div">
-          <img src={working} className="detail-icon" alt="unknown" />
-          <p>Editing this now</p>
-          <p className="note">click to close</p>
-        </div>
+      <div id="vibe" className="multi-detail">
+
+            <div className={selectedVibes.includes("working") ? "detail-div multi-option-selected" : "detail-div multi-option" } onClick={addToVibe.bind(null, "working")}>
+              <img src={working} className="detail-icon" alt="working" />
+              <p>Working</p>
+            </div>
+
+            <div className={selectedVibes.includes("networking") ? "detail-div multi-option-selected" : "detail-div multi-option" } onClick={addToVibe.bind(null, "networking")}>
+              <img src={networking} className="detail-icon" alt="networking" />
+              <p>Networking</p>
+            </div>
+
+            <div className={selectedVibes.includes("families") ? "detail-div multi-option-selected" : "detail-div multi-option" } onClick={addToVibe.bind(null, "families")}>
+              <img src={kids} className="detail-icon" alt="families" />
+              <p>Families</p>
+            </div>
+            <br />
+
+            <button className="select-option" onClick={(e)=>props.handleBlur(e)}>
+              Done
+            </button>
+            
       </div>
     )
   } else if (props.vibe.length === 0) {
