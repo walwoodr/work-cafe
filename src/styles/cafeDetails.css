@@ -86,3 +86,21 @@ div.select-option {
 .select-option p {
   margin-top: 2px;
 }
+
+.multi-option img,
+.multi-option-selected img {
+  padding: 3px;
+  border-radius: 10px;
+}
+
+.multi-option:hover img {
+  background-color: rgba(86, 216, 185, 0.40);
+}
+
+.multi-option-selected img {
+  border: 3px solid #56D8B9;
+}
+
+.multi-option-selected:hover img {
+  border: 3px solid rgba(86, 216, 185, 0.40);
+}

@@ -9,13 +9,52 @@ import gluten_free from '../icons/gluten_free.svg';
 export default (props) => {
   var food;
   if (props.editing) {
+
+    let selectedFood = props.food;
+
+    var addToFood = (name) => {
+      if (!selectedFood.includes(name)) {
+        selectedFood = selectedFood.concat(name)
+      } else {
+        let idx = selectedFood.indexOf(name);
+        selectedFood = [].concat(selectedFood.slice(0, idx), selectedFood.slice(idx+1, selectedFood.length))
+      }
+      props.handleSend("food", selectedFood);
+    };
+
     food = (
-      <div className="edit-detail category-detail-div" onClick={(e)=>props.handleBlur(e)}>
+      <div className="edit-detail category-detail-div">
         <h3>Food</h3>
 
-        <img src={croissant} className="detail-icon" alt="pastries" />
-        <p>Editing this now</p>
-        <p className="note">click to close</p>
+        <div className={selectedFood.includes("pastries") ? "category-item-div multi-option-selected" : "category-item-div multi-option" } onClick={addToFood.bind(null, "pastries")}>
+          <img src={croissant} className="detail-icon" alt="pastries" />
+          <p>Pastries</p>
+        </div>
+
+        <div className={selectedFood.includes("vegan") ? "category-item-div multi-option-selected" : "category-item-div multi-option" } onClick={addToFood.bind(null, "vegan")}>
+          <img src={vegan} className="detail-icon" alt="vegan" />
+          <p>Vegan Options</p>
+        </div>
+
+        <div className={selectedFood.includes("gluten free") ? "category-item-div multi-option-selected" : "category-item-div multi-option" } onClick={addToFood.bind(null, "gluten free")}>
+          <img src={gluten_free} className="detail-icon" alt="gluten free" />
+          <p>Gluten Free</p>
+        </div>
+
+        <div className={selectedFood.includes("light meal") ? "category-item-div multi-option-selected" : "category-item-div multi-option" } onClick={addToFood.bind(null, "light meal")}>
+          <img src={sandwich} className="detail-icon" alt="light meal" />
+          <p>Light Meal</p>
+        </div>
+
+        <div className={selectedFood.includes("full meal") ? "category-item-div multi-option-selected" : "category-item-div multi-option" } onClick={addToFood.bind(null, "full meal")}>
+          <img src={dinner} className="detail-icon" alt="full meal" />
+          <p>Full Meal</p>
+        </div>
+        <br />
+
+        <button className="select-option" onClick={(e)=>props.handleBlur(e)}>
+          Done
+        </button>
 
       </div>
     )
