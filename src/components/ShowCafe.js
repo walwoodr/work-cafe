@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 // actions
 import { editingDetail } from '../actions/app_state_actions';
+import { modifyCafe } from '../actions/cafe_actions';
 
 // Components
 import CafeDetails from './CafeDetails';
@@ -12,7 +13,16 @@ import CafeDetails from './CafeDetails';
 // Styles
 import '../styles/showCafe.css';
 
+// Default
+import peaceCoffee from '../defaultcafe.js'
+
 export class ShowCafe extends React.Component {
+  componentWillMount(){
+    if (this.props.cafe === peaceCoffee ) {
+      this.props.history.push("/cafes/1");
+    }
+  }
+
   render(){
     return (
       <div className="row">
@@ -27,6 +37,7 @@ export class ShowCafe extends React.Component {
             cafeDetails={this.props.cafe}
             editingDetail={this.props.editingDetail}
             editing={this.props.app_state.editing}
+            modifyCafe={this.props.modifyCafe}
            />
         </div>
 
@@ -45,13 +56,14 @@ function mapStateToProps(state, ownProps){
   if (cafe) {
     return {cafe: cafe, app_state: state.app_state}
   } else {
-    return {cafe: {}, app_state: state.app_state}
+    return {cafe: peaceCoffee, app_state: state.app_state}
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    editingDetail: editingDetail
+    editingDetail: editingDetail,
+    modifyCafe: modifyCafe
   }, dispatch)
 }
 
