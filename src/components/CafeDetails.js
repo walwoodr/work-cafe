@@ -52,6 +52,7 @@ export default class CafeDetails extends React.Component{
           editing={this.props.editing === "coffeeTea" ? true : false}
           handleBlur={this.handleBlur}
           handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
+          clearEdit={this.props.clearEdit}
         />
 
         <div id="amenities" className="multi-detail">
@@ -61,6 +62,7 @@ export default class CafeDetails extends React.Component{
             editing={this.props.editing === "outlet" ? true : false}
             handleBlur={this.handleBlur}
             handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
+            clearEdit={this.props.clearEdit}
           />
           <Bathroom
             bathroom={this.props.cafeDetails.genderNeutralRestrooms}
@@ -68,6 +70,7 @@ export default class CafeDetails extends React.Component{
             editing={this.props.editing === "bathroom" ? true : false}
             handleBlur={this.handleBlur}
             handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
+            clearEdit={this.props.clearEdit}
           />
         </div>
 
@@ -76,6 +79,8 @@ export default class CafeDetails extends React.Component{
           handleClick={this.handleFoodClick}
           editing={this.props.editing === "food" ? true : false}
           handleBlur={this.handleBlur}
+          handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
+          clearEdit={this.props.clearEdit}
         />
 
         <Vibe
@@ -83,6 +88,8 @@ export default class CafeDetails extends React.Component{
           handleClick={this.handleVibeClick}
           editing={this.props.editing === "vibe" ? true : false}
           handleBlur={this.handleBlur}
+          handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
+          clearEdit={this.props.clearEdit}
         />
 
       </div>

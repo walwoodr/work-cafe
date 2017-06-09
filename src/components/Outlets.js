@@ -27,21 +27,25 @@ const Outlets = (props) => {
 
     </div>
   } else if (props.editing){
+    let sendAndClearEdit = (value) => {
+      props.clearEdit();
+      props.handleSend.call(null, "outlets", value);
+    }
     outlets = <div className="edit-detail detail-div">
 
       <p>How many outlets does this cafe have in relation to seats?</p>
       <div className="select-option">
-        <button onClick={props.handleSend.bind(null, "outlets", "many")}>Many</button>
+        <button onClick={sendAndClearEdit.bind(null, "many")}>Many</button>
         <p className="detail-note">Everyone in the cafe can plug in easily (More than one outlet per table, or close to 1 outlet per seat)</p>
       </div>
 
       <div className="select-option">
-        <button onClick={props.handleSend.bind(null, "outlets", "some")}>Some</button>
+        <button onClick={sendAndClearEdit.bind(null, "some")}>Some</button>
         <p className="detail-note">Not all seats have outlets, but it is easy to get one with an outlet (About 1 outlet per table, or 1 outlet for every 2-3 seats)</p>
       </div>
 
       <div className="select-option">
-        <button onClick={props.handleSend.bind(null, "outlets", "few")}>Few</button>
+        <button onClick={sendAndClearEdit.bind(null, "few")}>Few</button>
         <p className="detail-note">Tables with outlets get sniped quickly, make sure you have a full battery. (Less than 1 outlet per table, or 1 outlet per 4+ seats)</p>
       </div>
 

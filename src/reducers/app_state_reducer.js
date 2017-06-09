@@ -15,7 +15,7 @@ export default function(state = {zipcode: '', loading: false, editing: ''}, acti
     case 'EDITING':
       let editing = Object.assign({}, state, {editing: action.payload})
       return editing;
-    case 'MODIFY_CAFE':
+    case 'CLEAR_EDIT':
       let doneEditing = Object.assign({}, state, {editing: ''})
       return doneEditing;
     default:
