@@ -22,6 +22,11 @@ function modifyCafe(id, property, value){
         type: "MODIFY_CAFE",
         payload: {id: id, property: {genderNeutralRestrooms: value}}
       }
+    case 'outlets':
+      return {
+        type: "MODIFY_CAFE",
+        payload: {id: id, property: {outlets: value}}
+      }
     }
 }
 
