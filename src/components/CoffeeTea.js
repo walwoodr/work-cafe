@@ -5,8 +5,21 @@ import tea from '../icons/tea.svg';
 export default (props) => {
 
   var divClasses;
-  if (props.tea === null || props.coffee === null) {
-    divClasses = "edit-detail category-detail-div"
+  var editLink;
+  if (props.editing) {
+    divClasses = "edit-detail category-detail-div";
+    editLink = (
+      <div onClick={(e) => props.handleBlur(e)}>
+        <p className="note">click to close</p>
+      </div>
+    )
+  } else if (props.tea === null || props.coffee === null) {
+    divClasses = "edit-detail category-detail-div";
+    editLink =(
+      <div onClick={(e) => props.handleClick(e)}>
+        <p className="note">click to edit</p>
+      </div>
+    )
   } else {
     divClasses = "category-detail-div"
   }
@@ -35,10 +48,9 @@ export default (props) => {
             <p className="detail-note">Artisinal</p>
           </div>
 
-          <p className="note" onClick={(e)=>props.handleBlur(e)}>click to close</p>
         </div>)
     } else {
-      return (<div onClick={(e) => props.handleClick(e)}><p>Unknown {type}</p><p className="note">click to edit</p></div>)
+      return (<p>Unknown {type}</p>)
     }
   }
 
@@ -48,14 +60,15 @@ export default (props) => {
 
       <div className="category-item-div">
         <img src={coffee} className="detail-icon" alt="coffee" />
-        <p>{words(props.coffee, "Coffee")}</p>
+        {words(props.coffee, "Coffee")}
       </div>
 
       <div className="category-item-div">
-      <img src={tea} className="detail-icon" alt="tea" />
-      <p>{words(props.tea, "Tea")}</p>
+        <img src={tea} className="detail-icon" alt="tea" />
+        {words(props.tea, "Tea")}
       </div>
 
+      {editLink}
     </div>
   )
 }
