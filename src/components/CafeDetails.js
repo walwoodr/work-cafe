@@ -27,10 +27,6 @@ export default class CafeDetails extends React.Component{
     }
   }
 
-  componentWillUnmount(){
-
-  }
-
   render(){
     return (
       <div id="cafe-details">

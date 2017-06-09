@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 // actions
 import { editingDetail } from '../actions/app_state_actions';
-import { modifyCafe } from '../actions/cafe_actions';
+import { modifyCafe, sendCafeUpdate } from '../actions/cafe_actions';
 
 // Components
 import CafeDetails from './CafeDetails';
@@ -23,16 +23,22 @@ export class ShowCafe extends React.Component {
     }
   }
 
+  componentDidUpdate(lastProps){
+    if ((lastProps.app_state.editing !== this.props.app_state.editing) && (this.props.app_state.editing === '')) {
+      this.props.sendCafeUpdate(this.props.cafe)
+    }
+  }
+
   render(){
     return (
       <div className="row">
         <h2>{this.props.cafe.name}</h2>
 
-        <div className="three columns padding-div">
+        <div className="two columns padding-div">
           <p>.</p>
         </div>
 
-        <div id="show-cafe" className="six columns">
+        <div id="show-cafe" className="eight columns">
           <CafeDetails
             cafeDetails={this.props.cafe}
             editingDetail={this.props.editingDetail}
@@ -42,7 +48,7 @@ export class ShowCafe extends React.Component {
            />
         </div>
 
-        <div className="three columns padding-div">
+        <div className="two columns padding-div">
           <p>.</p>
         </div>
 
@@ -64,7 +70,8 @@ function mapStateToProps(state, ownProps){
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     editingDetail: editingDetail,
-    modifyCafe: modifyCafe
+    modifyCafe: modifyCafe,
+    sendCafeUpdate: sendCafeUpdate
   }, dispatch)
 }
 

@@ -15,6 +15,26 @@ function loadData(zipcode){
   }
 }
 
+function sendCafeUpdate(cafeDetails){
+  return (dispatch) => {
+    fetch(`http://localhost:3001/cafes/${cafeDetails.id}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cafeDetails)
+    })
+      .then(function(response) {
+        console.log(response)
+          if (response.status >= 400) {
+              throw new Error("Bad response from server");
+          }
+          return response.json();
+      })
+  }
+}
+
 function modifyCafe(id, property, value){
   switch (property) {
     case 'genderNeutralRestrooms':
@@ -47,7 +67,13 @@ function modifyCafe(id, property, value){
        type: "MODIFY_CAFE",
        payload: {id: id, property: {vibe: value}}
      }
+     default:
+     return {}
     }
 }
 
-export { loadData, modifyCafe };
+export {
+  loadData,
+  modifyCafe,
+  sendCafeUpdate
+};
