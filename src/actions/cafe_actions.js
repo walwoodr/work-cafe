@@ -15,11 +15,14 @@ function loadData(zipcode){
   }
 }
 
-function modifyCafe(newCafeHash){
-  return {
-    type: "MODIFY_CAFE",
-    payload: newCafeHash
-  }
+function modifyCafe(id, property, value){
+  switch (property) {
+    case 'genderNeutralRestrooms':
+      return {
+        type: "MODIFY_CAFE",
+        payload: {id: id, property: {genderNeutralRestrooms: value}}
+      }
+    }
 }
 
 export { loadData, modifyCafe };

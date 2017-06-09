@@ -67,3 +67,22 @@ p.note {
 #gender-neutral {
   width: 220px;
 }
+
+p.detail-note {
+  color: #6B625D;
+  font-size: .75em;
+  text-transform: uppercase;
+}
+
+div.select-option {
+  margin: 0 10px;
+}
+
+.select-option button {
+  margin: 15px auto 0 auto;
+  background-color: rgba(255, 255, 255, 0.40);
+}
+
+.select-option p {
+  margin-top: 2px;
+}

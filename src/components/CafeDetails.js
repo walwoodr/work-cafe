@@ -37,6 +37,17 @@ export default class CafeDetails extends React.Component{
     this.props.editingDetail("");
   }
 
+  handleSend = (id, property, value) => {
+    console.log("clicked the thing");
+    console.log("id");
+    console.log(id);
+    console.log("property");
+    console.log(property);
+    console.log("value");
+    console.log(value);
+    this.props.modifyCafe(id, property, value);
+  }
+
   render(){
     return (
       <div id="cafe-details">
@@ -61,6 +72,7 @@ export default class CafeDetails extends React.Component{
             handleClick={this.handleBathroomClick}
             editing={this.props.editing === "bathroom" ? true : false}
             handleBlur={this.handleBlur}
+            handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
           />
         </div>
 
