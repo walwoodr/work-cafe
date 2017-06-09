@@ -17,7 +17,7 @@ export default (props) => {
     } else if (props.editing) {
       let lowerCaseType = type[0].toLowerCase() + type.slice(1);
       return (
-        <div onClick={(e)=>props.handleBlur(e)}>
+        <div>
 
           <p>What quality is the {type} in this cafe?</p>
           <div className="select-option">
@@ -35,7 +35,7 @@ export default (props) => {
             <p className="detail-note">Artisinal</p>
           </div>
 
-          <p className="note">click to close</p>
+          <p className="note" onClick={(e)=>props.handleBlur(e)}>click to close</p>
         </div>)
     } else {
       return (<div onClick={(e) => props.handleClick(e)}><p>Unknown {type}</p><p className="note">click to edit</p></div>)
