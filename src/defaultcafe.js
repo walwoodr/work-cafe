@@ -8,7 +8,7 @@ const peaceCoffee = {
       outlets: 'many',
       vibe: [
         'working',
-        'networking',
+        'conversations',
         'families'
       ],
       food: [

@@ -55,7 +55,7 @@ export default (props) => {
   }
 
   return (
-    <div className={divClasses}>
+    <div id="coffeeTea" className={divClasses}>
       <h3>Drinks</h3>
 
       <div className="category-item-div">
