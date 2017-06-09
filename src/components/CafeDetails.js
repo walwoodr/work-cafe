@@ -13,26 +13,6 @@ import '../styles/cafeDetails.css'
 
 export default class CafeDetails extends React.Component{
 
-  handleOutletClick = (e) => {
-    this.props.editingDetail("outlet");
-  }
-
-  handleCoffeeTeaClick = (e) => {
-    this.props.editingDetail("coffeeTea");
-  }
-
-  handleBathroomClick = (e) => {
-    this.props.editingDetail("bathroom");
-  }
-
-  handleFoodClick = (e) => {
-    this.props.editingDetail("food");
-  }
-
-  handleVibeClick = (e) => {
-    this.props.editingDetail("vibe");
-  }
-
   handleBlur = (e) => {
     this.props.editingDetail("");
   }
@@ -42,10 +22,13 @@ export default class CafeDetails extends React.Component{
   }
 
   componentDidUpdate(){
-    console.log("update")
     if (this.props.editing === "coffeeTea" && this.props.cafeDetails.coffeeQuality !== null && this.props.cafeDetails.teaQuality !== null){
       this.props.editingDetail("")
     }
+  }
+
+  componentWillUnmount(){
+
   }
 
   render(){
@@ -55,7 +38,7 @@ export default class CafeDetails extends React.Component{
         <CoffeeTea
           coffee={this.props.cafeDetails.coffeeQuality}
           tea={this.props.cafeDetails.teaQuality}
-          handleClick={this.handleCoffeeTeaClick}
+          handleClick={this.props.editingDetail.bind(null, "coffeeTea")}
           editing={this.props.editing === "coffeeTea" ? true : false}
           handleBlur={this.handleBlur}
           handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
@@ -64,14 +47,14 @@ export default class CafeDetails extends React.Component{
         <div id="amenities" className="multi-detail">
           <Outlets
             outlets={this.props.cafeDetails.outlets}
-            handleClick={this.handleOutletClick}
+            handleClick={this.props.editingDetail.bind(null, "outlet")}
             editing={this.props.editing === "outlet" ? true : false}
             handleBlur={this.handleBlur}
             handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
           />
           <Bathroom
             bathroom={this.props.cafeDetails.genderNeutralRestrooms}
-            handleClick={this.handleBathroomClick}
+            handleClick={this.props.editingDetail.bind(null, "bathroom")}
             editing={this.props.editing === "bathroom" ? true : false}
             handleBlur={this.handleBlur}
             handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
@@ -80,7 +63,7 @@ export default class CafeDetails extends React.Component{
 
         <Food
           food={this.props.cafeDetails.food}
-          handleClick={this.handleFoodClick}
+          handleClick={this.props.editingDetail.bind(null, "food")}
           editing={this.props.editing === "food" ? true : false}
           handleBlur={this.handleBlur}
           handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
@@ -88,7 +71,7 @@ export default class CafeDetails extends React.Component{
 
         <Vibe
           vibe={this.props.cafeDetails.vibe}
-          handleClick={this.handleVibeClick}
+          handleClick={this.props.editingDetail.bind(null, "vibe")}
           editing={this.props.editing === "vibe" ? true : false}
           handleBlur={this.handleBlur}
           handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
