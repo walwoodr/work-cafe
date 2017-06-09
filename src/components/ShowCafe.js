@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // actions
-import { editingDetail, clearEdit } from '../actions/app_state_actions';
+import { editingDetail } from '../actions/app_state_actions';
 import { modifyCafe } from '../actions/cafe_actions';
 
 // Components
@@ -64,8 +64,7 @@ function mapStateToProps(state, ownProps){
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     editingDetail: editingDetail,
-    modifyCafe: modifyCafe,
-    clearEdit: clearEdit
+    modifyCafe: modifyCafe
   }, dispatch)
 }
 

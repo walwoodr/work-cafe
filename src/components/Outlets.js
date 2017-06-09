@@ -28,7 +28,7 @@ const Outlets = (props) => {
     </div>
   } else if (props.editing){
     let sendAndClearEdit = (value) => {
-      props.clearEdit();
+      props.handleBlur();
       props.handleSend.call(null, "outlets", value);
     }
     outlets = <div className="edit-detail detail-div">

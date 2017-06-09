@@ -22,7 +22,7 @@ export default (props) => {
     </div>
   } else if (props.editing) {
     let sendAndClearEdit = (value) => {
-      props.clearEdit();
+      props.handleBlur();
       props.handleSend.call(null, "genderNeutralRestrooms", value);
     }
     bathroom = <div className="edit-detail detail-div" id="gender-neutral">

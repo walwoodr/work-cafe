@@ -24,16 +24,9 @@ function editingDetail(element){
   }
 }
 
-function clearEdit(){
-  return {
-    type: "CLEAR_EDIT"
-  }
-}
-
 export {
   changeZipcode,
   loadingApp,
   appLoaded,
-  editingDetail,
-  clearEdit
+  editingDetail
 };
