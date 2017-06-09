@@ -27,6 +27,16 @@ function modifyCafe(id, property, value){
         type: "MODIFY_CAFE",
         payload: {id: id, property: {outlets: value}}
       }
+    case 'coffeeQuality':
+      return {
+        type: "MODIFY_CAFE",
+        payload: {id: id, property: {coffeeQuality: value}}
+      }
+    case 'teaQuality':
+      return {
+        type: "MODIFY_CAFE",
+        payload: {id: id, property: {teaQuality: value}}
+      }
     }
 }
 

@@ -51,6 +51,7 @@ export default class CafeDetails extends React.Component{
           handleClick={this.handleCoffeeTeaClick}
           editing={this.props.editing === "coffeeTea" ? true : false}
           handleBlur={this.handleBlur}
+          handleSend={this.handleSend.bind(null, this.props.cafeDetails.id)}
         />
 
         <div id="amenities" className="multi-detail">

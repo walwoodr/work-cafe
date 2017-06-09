@@ -15,11 +15,26 @@ export default (props) => {
     if (drinkProp) {
       return (<p>{drinkProp}</p>)
     } else if (props.editing) {
+      let lowerCaseType = type[0].toLowerCase() + type.slice(1);
       return (
         <div onClick={(e)=>props.handleBlur(e)}>
-          <form>
-            
-          </form>
+
+          <p>What quality is the {type} in this cafe?</p>
+          <div className="select-option">
+            <button onClick={props.handleSend.bind(null, `${lowerCaseType}Quality`, `Decent ${type}`)}>Decent</button>
+            <p className="detail-note">Drinkable</p>
+          </div>
+
+          <div className="select-option">
+            <button onClick={props.handleSend.bind(null, `${lowerCaseType}Quality`, `Good ${type}`)}>Good</button>
+            <p className="detail-note">Enjoyable</p>
+          </div>
+
+          <div className="select-option">
+            <button onClick={props.handleSend.bind(null, `${lowerCaseType}Quality`, `Exceptional ${type}`)}>Exceptional</button>
+            <p className="detail-note">Artisinal</p>
+          </div>
+
           <p className="note">click to close</p>
         </div>)
     } else {
