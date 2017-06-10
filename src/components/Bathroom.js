@@ -44,7 +44,7 @@ export default (props) => {
   } else {
     bathroom = <div className="edit-detail detail-div" id="gender-neutral" onClick={(e) => props.handleClick(e)}>
 
-      <img src={gendered_toilet} className="detail-icon" alt="Gender Segregated Restroom" />
+      <img src={toilet} className="detail-icon" alt="Gender Segregated Restroom" />
       <p>Restrooms unknown</p>
 
       <p className="note">click to edit</p>
