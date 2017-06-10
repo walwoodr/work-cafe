@@ -1,4 +1,4 @@
-export default function(state = {zipcode: '', loading: false, editing: ''}, action) {
+export default function(state = {zipcode: '', loading: false, editing: '', viewingComponent: ''}, action) {
   switch (action.type) {
     case 'CHANGE_ZIPCODE':
       let newZip = Object.assign({}, state, {zipcode: action.payload})
@@ -15,6 +15,9 @@ export default function(state = {zipcode: '', loading: false, editing: ''}, acti
     case 'EDITING':
       let editing = Object.assign({}, state, {editing: action.payload})
       return editing;
+    case 'VIEWING':
+      let viewingComponent = Object.assign({}, state, {viewingComponent: action.payload})
+      return viewingComponent;
     default:
       return state;
   }

@@ -24,9 +24,17 @@ function editingDetail(element){
   }
 }
 
+function viewingComponent(component){
+  return {
+    type: "VIEWING",
+    payload: component
+  }
+}
+
 export {
   changeZipcode,
   loadingApp,
   appLoaded,
-  editingDetail
+  editingDetail,
+  viewingComponent
 };
