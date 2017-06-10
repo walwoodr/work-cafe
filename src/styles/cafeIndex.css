@@ -1,5 +1,9 @@
-.cafes-index div.row {
+.cafes-index-full div.row {
   margin: 30px 20px;
+}
+
+.cafes-index-min {
+  display: none;
 }
 
 .index-row {
@@ -37,10 +41,10 @@
     float: none;
     margin-bottom: 30px;
   }
-  .cafes-index div.row {
+  .cafes-index-full div.row {
     margin: 0px 20px;
   }
-  div.cafes-index {
+  div.cafes-index-full {
     margin-top: 30px;
   }
 }
