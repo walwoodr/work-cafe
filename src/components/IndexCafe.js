@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 
 export default (props) => {
   return (
-    <div>
-      <Link to={`/cafes/${props.cafe.id}`}><strong>{props.cafe.name}</strong></Link>
+    <div className="index-cafe four columns">
+      <Link to={`/cafes/${props.cafe.id}`}>
+        <div>
+          <strong>{props.cafe.name}</strong>
+          <p className="address"><strong>Address:</strong><span>{props.cafe.address}</span></p>
+        </div>
+      </Link>
+      <p><a href={props.cafe.website} target="_blank" rel="noopener noreferrer">Yelp page</a></p>
     </div>
   )
 }

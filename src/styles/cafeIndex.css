@@ -1,0 +1,46 @@
+.cafes-index div.row {
+  margin: 30px 20px;
+}
+
+.index-row {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.index-cafe {
+  background-color: #56D8B9;
+  min-height: 180px;
+  max-width: 250px;
+  padding: 10px;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.index-cafe a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.index-cafe p {
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.address span {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+@media (max-width: 550px) {
+  .index-cafe.four.column,
+  .index-cafe.four.columns {
+    float: none;
+    margin-bottom: 30px;
+  }
+  .cafes-index div.row {
+    margin: 0px 20px;
+  }
+  .cafes-index div {
+    margin-top: 30px;
+  }
+}
