@@ -33,14 +33,14 @@ export class ShowCafe extends React.Component {
   render(){
     if (this.props.cafe !== null){
       return (
-        <div className="row">
+        <div className="row" id="show-cafe">
           <h2>{this.props.cafe.name}</h2>
 
           <div className="two columns padding-div">
             <p>.</p>
           </div>
 
-          <div id="show-cafe" className="eight columns">
+          <div id="show-cafe-details" className="eight columns">
             <CafeDetails
               cafeDetails={this.props.cafe}
               editingDetail={this.props.editingDetail}
