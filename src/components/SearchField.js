@@ -15,7 +15,7 @@ const SearchField = (props) => {
     <form onSubmit={handleSubmit}>
       <input id="search_field" type="text" placeholder="zip code" value={props.app_state.zipcode} onChange={handleChange} />
       <br />
-      <input id="search_button" className="button-primary" type="submit" value="Search" />
+      <input id="search_button" className="button-primary" type="submit" value="Search" onClick={props.viewingComponent.bind(null, "cafeIndex")} />
     </form>
   )
 }

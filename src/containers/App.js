@@ -14,7 +14,7 @@ import NavBar from '../components/NavBar';
 
 // Actions
 import { loadData, modifyCafe } from '../actions/cafe_actions';
-import { changeZipcode, loadingApp, appLoaded } from '../actions/app_state_actions';
+import { changeZipcode, loadingApp, appLoaded, viewingComponent } from '../actions/app_state_actions';
 
 export class App extends Component {
   render() {
@@ -22,7 +22,8 @@ export class App extends Component {
       <div className="App">
         <div className="App-header">
           <h2>Covfefe</h2>
-          <NavBar />
+          <NavBar
+          viewingComponent={this.props.viewingComponent} />
         </div>
         {this.props.children}
       </div>
@@ -40,7 +41,8 @@ const mapDispatchToProps = (dispatch) => {
     modifyCafe: modifyCafe,
     changeZipcode: changeZipcode,
     loadingApp: loadingApp,
-    appLoaded: appLoaded
+    appLoaded: appLoaded,
+    viewingComponent: viewingComponent
   }, dispatch)
 }
 

@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 // Actions
 import { loadData } from '../actions/cafe_actions';
-import { changeZipcode, loadingApp, appLoaded } from '../actions/app_state_actions';
+import { changeZipcode, loadingApp, appLoaded, viewingComponent } from '../actions/app_state_actions';
 
 // Components
 import SearchField from '../components/SearchField';
@@ -26,7 +26,14 @@ export class Home extends React.Component {
     } else {
       return (
         <div>
-          <SearchField app_state={this.props.app_state} cafes={this.props.cafes} changeZipcode={this.props.changeZipcode} loadData={this.props.loadData} history={this.props.history} />
+          <SearchField
+            app_state={this.props.app_state}
+            cafes={this.props.cafes}
+            changeZipcode={this.props.changeZipcode}
+            loadData={this.props.loadData}
+            history={this.props.history}
+            viewingComponent={this.props.viewingComponent}
+          />
           <AppIntro />
         </div>
       )
@@ -43,7 +50,8 @@ const mapDispatchToProps = (dispatch) => {
     loadData: loadData,
     changeZipcode: changeZipcode,
     loadingApp: loadingApp,
-    appLoaded: appLoaded
+    appLoaded: appLoaded,
+    viewingComponent: viewingComponent
   }, dispatch)
 }
 

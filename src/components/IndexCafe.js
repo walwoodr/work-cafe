@@ -5,7 +5,7 @@ export default (props) => {
   return (
     <div className="index-cafe four columns">
       <Link to={`/cafes/${props.cafe.id}`}>
-        <div>
+        <div onClick={e => props.viewingComponent(e)}>
           <strong>{props.cafe.name}</strong>
           <p className="address"><strong>Address:</strong><span>{props.cafe.address}</span></p>
         </div>
