@@ -4,6 +4,10 @@
   height: 20px;
 }
 
+#nav-bar.hidden {
+  display: none;
+}
+
 .nav-link {
   display: inline-block;
   text-decoration: none;

@@ -23,8 +23,10 @@ export class App extends Component {
         <div className="App-header">
           <h2>Covfefe</h2>
           <NavBar
-          viewingComponent={this.props.viewingComponent}
-          nowViewing={this.props.app_state.viewingComponent} />
+            viewingComponent={this.props.viewingComponent}
+            nowViewing={this.props.app_state.viewingComponent}
+            cafesPresent={this.props.cafes.length !== 0}
+          />
         </div>
         {this.props.children}
       </div>
