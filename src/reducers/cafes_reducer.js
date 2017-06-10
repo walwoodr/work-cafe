@@ -2,7 +2,7 @@ export default function(state = [], action){
   switch (action.type) {
     case 'LOAD_CAFES':
       let cafes = action.payload;
-      return state.concat(cafes)
+      return cafes
     case 'MODIFY_CAFE':
       let cafe = state.find((cafe) => {return cafe.id === action.payload.id})
       let idx = state.indexOf(cafe)
