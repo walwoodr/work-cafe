@@ -13,6 +13,9 @@ import SearchField from '../components/SearchField';
 import AppIntro from '../components/AppIntro';
 
 export class Home extends React.Component {
+  componentWillMount(){
+    this.props.viewingComponent("search");
+  }
   componentWillUpdate(){
     if (this.props.app_state.loading) {
       this.props.history.push("/cafes");

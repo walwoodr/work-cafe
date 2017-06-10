@@ -18,9 +18,8 @@ import peaceCoffee from '../defaultcafe.js'
 
 export class ShowCafe extends React.Component {
   componentWillMount(){
-    console.log("this.props.cafe")
-    console.log(this.props.cafe)
     if (this.props.cafe === null ) {
+      this.props.viewingComponent("search");
       this.props.history.push("/search");
     }
   }

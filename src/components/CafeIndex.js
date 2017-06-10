@@ -16,6 +16,7 @@ import '../styles/cafeIndex.css';
 export class CafeIndex extends React.Component {
   componentWillMount(){
     if (this.props.cafes.length === 0 ) {
+      this.props.viewingComponent("search");
       this.props.history.push("/search");
     }
   }

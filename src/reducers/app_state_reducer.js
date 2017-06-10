@@ -1,4 +1,4 @@
-export default function(state = {zipcode: '', loading: false, editing: '', viewingComponent: ''}, action) {
+export default function(state = {zipcode: '', loading: false, editing: '', viewingComponent: 'search'}, action) {
   switch (action.type) {
     case 'CHANGE_ZIPCODE':
       let newZip = Object.assign({}, state, {zipcode: action.payload})
