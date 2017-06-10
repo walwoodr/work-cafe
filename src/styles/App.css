@@ -19,8 +19,13 @@ p {
 
 .App-header {
   background-color: #6B625D;
-  padding: 20px;
+  padding: 40px 20px 40px 40px;
   color: #F6F2ED;
+}
+
+.App-header h2 {
+  margin-bottom: 0;
+  text-align: left;
 }
 
 #app-intro {

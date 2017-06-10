@@ -1,0 +1,36 @@
+#nav-bar {
+  float: right;
+  margin-bottom: 0;
+  height: 20px;
+}
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  margin: 5px 10px 0 10px;
+  border: 1px #F6F2ED solid;
+  padding: 5px 10px;
+  border-radius: 15px 15px 0 0;
+  height: 36px;
+  color: #6B625D;
+  background-color: rgba(255, 255, 255, 0.40);
+}
+
+.nav-link:hover {
+  color: #F6F2ED;
+  background-color: rgba(86, 216, 185, 0.40);
+}
+
+.nav-link.current {
+  color: #F6F2ED;
+  background-color: rgba(86, 216, 185, 0.60);
+}
+
+
+
+/*
+#56D8B9
+#F6F2ED
+#D2BEB7
+#6B625D
+*/
