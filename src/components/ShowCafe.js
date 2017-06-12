@@ -13,9 +13,6 @@ import CafeDetails from './CafeDetails';
 // Styles
 import '../styles/showCafe.css';
 
-// Default
-import peaceCoffee from '../defaultcafe.js'
-
 export class ShowCafe extends React.Component {
   componentWillMount(){
     if (this.props.cafe === null ) {
