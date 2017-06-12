@@ -12,6 +12,9 @@ import { changeZipcode, loadingApp, appLoaded, viewingComponent } from '../actio
 import SearchField from '../components/SearchField';
 import AppIntro from '../components/AppIntro';
 
+// Images
+import coffeeCupColored from '../icons/coffeecupcolored.svg'
+
 export class Home extends React.Component {
   componentWillMount(){
     this.props.viewingComponent("search");
@@ -24,7 +27,10 @@ export class Home extends React.Component {
   render(){
     if (this.props.app_state.loading){
       return (
-          <p>Brewing up your cafes.</p>
+          <div id="loading">
+            <img src={coffeeCupColored} className="loading-icon" alt="coffee" />
+            <h3>Brewing up your cafes.</h3>
+          </div>
         )
     } else {
       return (

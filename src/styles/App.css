@@ -12,9 +12,9 @@ p {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.loading-icon {
+  animation: App-logo-spin infinite 5s linear;
+  height: 300px;
 }
 
 .App-header {
@@ -33,6 +33,12 @@ p {
   width: 85%;
   margin: 0 auto;
 }
+
+
+#loading h3 {
+  color: #6B625D;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

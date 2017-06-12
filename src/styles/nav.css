@@ -12,11 +12,10 @@
   display: inline-block;
   text-decoration: none;
   margin: 5px 10px 0 10px;
-  border: 1px #F6F2ED solid;
-  padding: 5px 10px;
+  padding: 6px 11px;
   border-radius: 15px 15px 0 0;
-  height: 36px;
-  color: #6B625D;
+  height: 35px;
+  color: #F6F2ED;
   background-color: rgba(255, 255, 255, 0.40);
 }
 
@@ -34,6 +33,7 @@
 
 /*
 #56D8B9
+#4ABA9F
 #F6F2ED
 #D2BEB7
 #6B625D

@@ -21,7 +21,7 @@ export class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Covfefe</h2>
+          <h2>cowork café</h2>
           <NavBar
             viewingComponent={this.props.viewingComponent}
             nowViewing={this.props.app_state.viewingComponent}
