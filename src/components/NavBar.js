@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/nav.css';
 
 var NavBar = (props) => {
-  console.log("props.cafesPresent");
-  console.log(props.cafesPresent);
   return (
     <ul id="nav-bar" className={props.cafesPresent === false ? 'hidden' : "" }>
       <Link to={'/search'}>
