@@ -45,6 +45,10 @@ p {
   to { transform: rotate(360deg); }
 }
 
+.toolTipTheme {
+ width: 150px;
+}
+
 /*
 #56D8B9
 #F6F2ED
