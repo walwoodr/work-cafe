@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // actions
-import { editingDetail } from '../actions/app_state_actions';
+import { editingDetail, viewingComponent } from '../actions/app_state_actions';
 import { modifyCafe, sendCafeUpdate } from '../actions/cafe_actions';
 
 // Components
-import CafeDetails from './CafeDetails';
+import CafeDetails from '../containers/CafeDetails';
 
 // Styles
 import '../styles/showCafe.css';
@@ -73,7 +73,8 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     editingDetail: editingDetail,
     modifyCafe: modifyCafe,
-    sendCafeUpdate: sendCafeUpdate
+    sendCafeUpdate: sendCafeUpdate,
+    viewingComponent: viewingComponent
   }, dispatch)
 }
 

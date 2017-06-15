@@ -10,8 +10,8 @@ import thunk from 'redux-thunk';
 // Components
 import App from './containers/App';
 import Home from './containers/Home';
-import ShowCafe from './components/ShowCafe';
-import CafeIndex from './components/CafeIndex';
+import ShowCafe from './containers/ShowCafe';
+import CafeIndex from './containers/CafeIndex';
 
 // Reducer
 import reducer from './reducers/index';

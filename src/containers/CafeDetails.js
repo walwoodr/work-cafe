@@ -2,11 +2,11 @@
 import React from 'react';
 
 // Components
-import Outlets from './Outlets';
-import Bathroom from './Bathroom';
-import Food from './Food';
-import Vibe from './Vibe';
-import CoffeeTea from './CoffeeTea';
+import Outlets from '../components/Outlets';
+import Bathroom from '../components/Bathroom';
+import Food from '../components/Food';
+import Vibe from '../components/Vibe';
+import CoffeeTea from '../components/CoffeeTea';
 
 // Styles
 import '../styles/cafeDetails.css'

@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 import { loadingApp, appLoaded, viewingComponent } from '../actions/app_state_actions';
 
 // Components
-import IndexCafe from './IndexCafe';
+import IndexCafe from '../components/IndexCafe';
 
 // Styles
 import '../styles/cafeIndex.css';
